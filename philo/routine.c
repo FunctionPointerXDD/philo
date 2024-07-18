@@ -6,7 +6,7 @@
 /*   By: chansjeo <chansjeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 10:13:35 by chansjeo          #+#    #+#             */
-/*   Updated: 2024/06/17 15:07:13 by chansjeo         ###   ########.fr       */
+/*   Updated: 2024/06/17 15:23:47 by chansjeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	print_status(t_philo *philo, int status)
 {
 	long	cur_time;
 
-	cur_time = get_time(philo->info->start_time);
 	pthread_mutex_lock(&philo->info->print_mtx);
+	cur_time = get_time(philo->info->start_time);
 	if (status == PICKUP && !simulation_finished(philo->info))
 		printf("%ld %d has taken a fork\n", cur_time, philo->id);
 	else if (status == EAT && !simulation_finished(philo->info))

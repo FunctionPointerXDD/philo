@@ -6,7 +6,7 @@
 /*   By: chansjeo <chansjeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:27:42 by chansjeo          #+#    #+#             */
-/*   Updated: 2024/06/17 15:06:45 by chansjeo         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:20:59 by chansjeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,6 @@ void	fork_position(t_philo *philo, t_fork *fork, int i)
 	philo_num = philo->info->philo_num;
 	philo->left_fork = &fork[i];
 	philo->right_fork = &fork[(i + 1) % philo_num];
-	/*
-	if (i % 2 != 0)
-	{
-		philo->left_fork = &fork[(i + 1) % philo_num];
-		philo->right_fork = &fork[i];
-	}
-	*/
 }
 
 void	assign_value(t_info *info)
