@@ -15,12 +15,12 @@
 void	eat(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->right_fork->fork);
-	philo->left_fork->fork_id++;
-	philo->left_fork->fork_id--;
-	print_status(philo, PICKUP);
-	pthread_mutex_lock(&philo->left_fork->fork);
 	philo->right_fork->fork_id++;
 	philo->right_fork->fork_id--;
+	print_status(philo, PICKUP);
+	pthread_mutex_lock(&philo->left_fork->fork);
+	philo->left_fork->fork_id++;
+	philo->left_fork->fork_id--;
 	print_status(philo, PICKUP);
 	set_long(&philo->philo_mtx, &philo->last_eat_time, \
 					get_time(philo->info->start_time));
